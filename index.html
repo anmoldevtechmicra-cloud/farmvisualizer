@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farm Data Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌾 Farm Data Dashboard</h1>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span>Live</span>
+            </div>
+        </header>
+
+        <div class="metrics-grid">
+            <!-- Temperature Card -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3>Temperature</h3>
+                    <span class="metric-icon">🌡️</span>
+                </div>
+                <div class="metric-value" id="temperature">24°C</div>
+                <div class="metric-trend">
+                    <span class="trend-up">↑ 2°C</span>
+                    <span class="metric-time">Last updated: <span id="temp-time">--</span></span>
+                </div>
+            </div>
+
+            <!-- Moisture Level Card -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3>Soil Moisture</h3>
+                    <span class="metric-icon">💧</span>
+                </div>
+                <div class="metric-value" id="moisture">65%</div>
+                <div class="metric-trend">
+                    <span class="trend-down">↓ 3%</span>
+                    <span class="metric-time">Last updated: <span id="moisture-time">--</span></span>
+                </div>
+            </div>
+
+            <!-- Humidity Card -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3>Humidity</h3>
+                    <span class="metric-icon">💨</span>
+                </div>
+                <div class="metric-value" id="humidity">72%</div>
+                <div class="metric-trend">
+                    <span class="trend-up">↑ 1%</span>
+                    <span class="metric-time">Last updated: <span id="humidity-time">--</span></span>
+                </div>
+            </div>
+
+            <!-- Light Intensity Card -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3>Light Intensity</h3>
+                    <span class="metric-icon">☀️</span>
+                </div>
+                <div class="metric-value" id="light">850 lux</div>
+                <div class="metric-trend">
+                    <span class="trend-up">↑ 50 lux</span>
+                    <span class="metric-time">Last updated: <span id="light-time">--</span></span>
+                </div>
+            </div>
+
+            <!-- pH Level Card -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3>Soil pH</h3>
+                    <span class="metric-icon">🧪</span>
+                </div>
+                <div class="metric-value" id="ph">6.8</div>
+                <div class="metric-trend">
+                    <span class="trend-neutral">→ Stable</span>
+                    <span class="metric-time">Last updated: <span id="ph-time">--</span></span>
+                </div>
+            </div>
+
+            <!-- Wind Speed Card -->
+            <div class="metric-card">
+                <div class="metric-header">
+                    <h3>Wind Speed</h3>
+                    <span class="metric-icon">🌬️</span>
+                </div>
+                <div class="metric-value" id="wind">12 km/h</div>
+                <div class="metric-trend">
+                    <span class="trend-up">↑ 2 km/h</span>
+                    <span class="metric-time">Last updated: <span id="wind-time">--</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="charts-section">
+            <div class="chart-card">
+                <h2>Temperature & Humidity Trend</h2>
+                <canvas id="tempHumidityChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+                <h2>Soil Moisture & pH Trend</h2>
+                <canvas id="moisturePhChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Data Table -->
+        <div class="table-section">
+            <h2>Recent Readings</h2>
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Temperature</th>
+                        <th>Moisture</th>
+                        <th>Humidity</th>
+                        <th>Light</th>
+                        <th>pH</th>
+                        <th>Wind</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Data will be populated by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
